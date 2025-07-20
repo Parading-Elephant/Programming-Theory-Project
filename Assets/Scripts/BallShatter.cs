@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// INHERITANCE
 public class BallShatter : Ball
 {
     [SerializeField] private GameObject fragmentPrefab;
@@ -17,7 +18,7 @@ public class BallShatter : Ball
         
     }
 
-    // INHERITANCE
+    // POLYMORPHISM
     protected override void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -25,7 +26,8 @@ public class BallShatter : Ball
             // Shatter into multiple balls
             for (int i = 0; i < fragmentQuantity; i++)
             {
-                SpawnFragment(i * (360 / fragmentQuantity));
+                //SpawnFragment(i * (360 / fragmentQuantity));
+                SpawnFragment(Random.Range(0f, 360f));
             }
 
             // Then destroy this
