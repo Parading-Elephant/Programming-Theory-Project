@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float xBound = 1f;
     [SerializeField] private float zBound = 1f;
 
+    [SerializeField] private UI ui;
+
     // ENCAPSULATION
     public bool dead
     {
@@ -66,5 +68,6 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("You died!");
         dead = true;
+        ui.OnPlayerDied();
     }
 }
