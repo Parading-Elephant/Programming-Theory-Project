@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
 
     private Ball GetRandomBall()
     {
-        int index = Random.Range(0, prefabSpawns.Capacity - 1);
+        int index = Random.Range(0, prefabSpawns.Capacity);
         return prefabSpawns[index];
     }
 }
